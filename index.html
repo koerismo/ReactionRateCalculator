@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rate Calculator</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+		<h1>Rate Calculator</h1>
+		<h3>Calculates reaction rate from concentrations.</h3>
+		</div>
+	<table>
+		<tr>
+			<th>Trial</th>
+			<th>[A] <div class="inline-break">(<input id="i-unit-a">)</div></th>
+			<th>[B] <div class="inline-break">(<input disabled class="o-unit-a">)</div></th>
+			<th>Rate <div class="inline-break">(<input disabled class="o-unit-a">/<input id="i-unit-b">)</div></th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td><input placeholder="A" id="i-value-1a"></td>
+			<td><input placeholder="A" id="i-value-2a"></td>
+			<td><input placeholder="1" id="i-result-1"></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><input placeholder="A" disabled class="o-value-1a"></td>
+			<td><input placeholder="B" id="i-value-2b"></td>
+			<td><input placeholder="2" id="i-result-2"></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><input placeholder="B" id="i-value-1b"></td>
+			<td><input placeholder="A" disabled class="o-value-2a"></td>
+			<td><input placeholder="3" id="i-result-3"></td>
+		</tr>
+	</table>
+	<div id="output">
+		<code>Rate = <span id="eq-repr-a">k[A]<sup>x</sup></span><span id="eq-repr-b">[B]<sup>y</sup></span></code><br><br>
+		<math>
+			<mrow>
+				<mi>x = log(</mi>
+				<mfrac>
+					<mn class="o-result-3">x</mn>
+					<mn class="o-result-1">x</mn>
+				</mfrac>
+				<mi>) / log(</mi>
+				<mfrac>
+					<mn class="o-value-1b">x</mn>
+					<mn class="o-value-1a">x</mn>
+				</mfrac>
+				<mi>) = </mi>
+				<mn class="eval-x"></mn>
+			</mrow>
+			
+			<mrow>
+				<mi>y = log(</mi>
+				<mfrac>
+					<mn class="o-result-2">x</mn>
+					<mn class="o-result-1">x</mn>
+				</mfrac>
+				<mi>) / log(</mi>
+				<mfrac>
+					<mn class="o-value-2b">x</mn>
+					<mn class="o-value-2a">x</mn>
+				</mfrac>
+				<mi>) = </mi>
+				<mn class="eval-y"></mn>
+			</mrow>
+			<mi>k = </mi>
+				<mfrac>
+					<mi><mn class="o-result-1">x</mn></mi>
+					<mi><mn class="o-value-1a">x</mn><sup class="eval-x"></sup>&times;<mn class="o-value-2a">x</mn><sup class="eval-y"></sup></mi>
+				</mfrac>
+			<mi> = <mn class="eval-k"></mn> <span class="unit">(1/<span class="o-unit-b">x</span>)</span></mi>
+		</math>
+	</div>
+	</div>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+	<script src="./script.js"></script>
+</body>
+</html>

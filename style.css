@@ -1,0 +1,134 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+#header {
+	margin: 10px 0 20px 0;
+}
+
+h1, h3 {
+	font-weight: normal;
+	margin: 0;
+}
+
+h3 {
+	font-weight: bold;
+}
+
+body {
+	background: #f9f9f9;
+	font-family: 'Ubuntu Mono', sans-serif;
+	font-size: 13px;
+	display: flex;
+	min-height: 100vh;
+}
+
+#container {
+	margin: 0 auto;
+	width: 500px;
+	background: #fff;
+	padding: 10px;
+	
+	display: flex;
+	flex-direction: column;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table th {
+	background: #f8f8f8;
+}
+
+table th,
+table td {
+	border: 1px solid #bbb;
+	padding: 10px;
+}
+
+input#i-unit-a,
+input.o-unit-a,
+input#i-unit-b {
+	width: 18px;
+	margin: 0 2px;
+}
+
+td > input {
+	width: calc(100% - 10px);
+}
+
+tr > td:first-child {
+	text-align: center;
+}
+
+input:disabled {
+	border: 1px solid #0002;
+	border-radius: 2px;
+	padding: 3px;
+	color: #0006;
+}
+
+#output {
+	margin-top: 10px;
+	padding: 10px;
+	background: #f8f8f8;
+	border: 1px solid #bbb;
+}
+
+#output math {
+	font-family: 'Ubuntu Mono', monospace;
+}
+
+input.o-inline {
+	border: none;
+	background: none;
+	display: inline;
+}
+
+.unit {
+	opacity: 0.5;
+	margin: 0 4px;
+}
+
+mrow {
+	display: block;
+	width: 0; /* I don't know why.
+			     I don't want to know why.
+			     I shouldn't have to wonder why
+			     this fixes line breaks. */
+}
+
+.inline-break {
+	display: inline-block;
+}
+
+@media screen and (max-width: 500px) {
+	table th {
+		padding: 5px;
+	}
+	
+	table td {
+		padding: 0;
+	}
+	
+	table td > input {
+		text-align: center;
+		outline: 1px solid #999;
+		outline-offset: -4px;
+		border: none;
+		border-radius: 6px;
+		padding: 10px 5px;
+	}
+	table td > input:disabled {
+		box-shadow: none;
+		border: none;
+		outline: none;
+		padding: 5px;
+	}
+}
